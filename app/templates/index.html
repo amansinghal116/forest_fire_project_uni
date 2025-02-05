@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Forest Fire Burn Area Predictor</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 p-10">
+    <div class="container mx-auto bg-white p-8 rounded-lg shadow-md">
+        <h1 class="text-2xl font-bold mb-6 text-center">Forest Fire Burn Area Prediction</h1>
+        <form action="/predict/" method="post" class="space-y-4">
+            <div class="grid grid-cols-2 gap-4">
+                <div>
+                    <label class="block mb-2">X Coordinate (1-9):</label>
+                    <input type="number" name="X" min="1" max="9" required class="w-full p-2 border rounded">
+                </div>
+                <div>
+                    <label class="block mb-2">Y Coordinate (2-9):</label>
+                    <input type="number" name="Y" min="2" max="9" required class="w-full p-2 border rounded">
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-4">
+                <div>
+                    <label class="block mb-2">Month:</label>
+                    <select name="month" required class="w-full p-2 border rounded">
+                        <option value="jan">January</option>
+                        <option value="feb">February</option>
+                        <option value="mar">March</option>
+                        <option value="apr">April</option>
+                        <option value="may">May</option>
+                        <option value="jun">June</option>
+                        <option value="jul">July</option>
+                        <option value="aug">August</option>
+                        <option value="sep">September</option>
+                        <option value="oct">October</option>
+                        <option value="nov">November</option>
+                        <option value="dec">December</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block mb-2">Day of Week:</label>
+                    <select name="day" required class="w-full p-2 border rounded">
+                        <option value="mon">Monday</option>
+                        <option value="tue">Tuesday</option>
+                        <option value="wed">Wednesday</option>
+                        <option value="thu">Thursday</option>
+                        <option value="fri">Friday</option>
+                        <option value="sat">Saturday</option>
+                        <option value="sun">Sunday</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-4">
+                <div>
+                    <label class="block mb-2">FFMC Index (18.7-96.20):</label>
+                    <input type="number" step="0.1" name="FFMC" min="18.7" max="96.20" required class="w-full p-2 border rounded">
+                </div>
+                <div>
+                    <label class="block mb-2">DMC Index (1.1-291.3):</label>
+                    <input type="number" step="0.1" name="DMC" min="1.1" max="291.3" required class="w-full p-2 border rounded">
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-4">
+                <div>
+                    <label class="block mb-2">DC Index (7.9-860.6):</label>
+                    <input type="number" step="0.1" name="DC" min="7.9" max="860.6" required class="w-full p-2 border rounded">
+                </div>
+                <div>
+                    <label class="block mb-2">ISI Index (0.0-56.10):</label>
+                    <input type="number" step="0.1" name="ISI" min="0.0" max="56.10" required class="w-full p-2 border rounded">
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-4">
+                <div>
+                    <label class="block mb-2">Temperature (2.2-33.30°C):</label>
+                    <input type="number" step="0.1" name="temp" min="2.2" max="33.30" required class="w-full p-2 border rounded">
+                </div>
+                <div>
+                    <label class="block mb-2">Relative Humidity (15-100%):</label>
+                    <input type="number" name="RH" min="15" max="100" required class="w-full p-2 border rounded">
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-4">
+                <div>
+                    <label class="block mb-2">Wind Speed (0.40-9.40 km/h):</label>
+                    <input type="number" step="0.1" name="wind" min="0.40" max="9.40" required class="w-full p-2 border rounded">
+                </div>
+                <div>
+                    <label class="block mb-2">Rain (0.0-6.4 mm/m²):</label>
+                    <input type="number" step="0.1" name="rain" min="0.0" max="6.4" required class="w-full p-2 border rounded">
+                </div>
+            </div>
+
+            <div class="text-center">
+                <button type="submit" class="bg-blue-500 text-white px-6 py-2 rounded hover:bg-blue-600">
+                    Predict Burned Area
+                </button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

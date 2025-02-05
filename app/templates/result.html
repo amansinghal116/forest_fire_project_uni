@@ -1,0 +1,46 @@
+<!-- templates/result.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Forest Fire Burn Area Prediction Result</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 p-10">
+    <div class="container mx-auto bg-white p-8 rounded-lg shadow-md">
+        <h1 class="text-2xl font-bold mb-6 text-center">Prediction Result</h1>
+        
+        <div class="bg-blue-100 border-l-4 border-blue-500 p-4 mb-6">
+            <p class="font-bold">Predicted Burned Area: <span class="text-blue-700">{{ prediction }} hectares</span></p>
+        </div>
+
+        <h2 class="text-xl font-semibold mb-4">Input Parameters:</h2>
+        <div class="grid grid-cols-2 gap-4">
+            <div>
+                <p><strong>X Coordinate:</strong> {{ input_data.X }}</p>
+                <p><strong>Y Coordinate:</strong> {{ input_data.Y }}</p>
+                <p><strong>Month:</strong> {{ original_month }} (Encoded as {{ input_data.month }})</p>
+                <p><strong>Day:</strong> {{ original_day }} (Encoded as {{ input_data.day }})</p>
+            </div>
+            <div>
+                <p><strong>FFMC Index:</strong> {{ input_data.FFMC }}</p>
+                <p><strong>DMC Index:</strong> {{ input_data.DMC }}</p>
+                <p><strong>DC Index:</strong> {{ input_data.DC }}</p>
+                <p><strong>ISI Index:</strong> {{ input_data.ISI }}</p>
+            </div>
+            <div>
+                <p><strong>Temperature:</strong> {{ input_data.temp }}°C</p>
+                <p><strong>Relative Humidity:</strong> {{ input_data.RH }}%</p>
+                <p><strong>Wind Speed:</strong> {{ input_data.wind }} km/h</p>
+                <p><strong>Rain:</strong> {{ input_data.rain }} mm/m²</p>
+            </div>
+        </div>
+
+        <div class="mt-6 text-center">
+            <a href="/" class="bg-blue-500 text-white px-6 py-2 rounded hover:bg-blue-600">
+                Make Another Prediction
+            </a>
+        </div>
+    </div>
+</body>
+</html>
