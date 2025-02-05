@@ -5,7 +5,7 @@ Forest Fire Project- Model Deployment using Docker and MLFlow
 https://archive.ics.uci.edu/dataset/162/forest+fires (target variable: area)
 
 ## Information
-In this we performed the following:
+In this project we performed the following:
 1. Data preprocessing tasks such as handling missing values, encoding
 categorical variables, and scaling numerical features.
 2. Investigate MLflow and its significance in managing the end-to-end DS lifecycle,
